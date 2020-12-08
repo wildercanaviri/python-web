@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+
+{% block content%}
+
+    
+</div>
+        <form action="" method="POST">
+            <div class="row justify-content-md-center" style="margin-top: 80px;">
+                <div class="col col-lg-6">
+                    <input type="text" name="palabra" class="form-control" id="exampleFormControlInput1" placeholder="Escriba alguna palabra">
+                </div>
+                
+                <div class="col col-lg-2">
+                    <button type="submit" class="form-control btn btn-warning">Buscar</button>
+                </div>
+        </div>
+
+        <div class="row justify-content-md-center" style="margin-top: 20px;">
+            <div class="col col-lg-1">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="opcion" value="SPA" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Español
+                    </label>
+                  </div>
+            </div>
+
+            <div class="col col-lg-2">
+                <img src="../static/images/idioma_espanol.png" class="rounded" alt="...">
+            </div>
+            
+            <div class="col col-lg-1">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="opcion" value="ENG" id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                     Ingles
+                    </label>
+                  </div>
+            </div>
+
+            <div class="col col-lg-2">
+                <img src="../static/images/idioma_ingles.png" class="rounded" alt="...">
+            </div>
+
+        </div>
+    </form>
+    
+        <div class="row justify-content-md-center" style="margin-top: 80px;">
+            <div class="col col-lg-7">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="8">{{contenido}}</textarea>
+            </div>
+        </div>
+      
+       
+</div>
+
+
+{% endblock %}
