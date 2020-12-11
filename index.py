@@ -11,8 +11,8 @@ def home():
         opcion=request.form['opcion'] 
         aux=Busqueda(palabra,opcion)
         resultado=aux.obtenerPalabra()
-        return render_template('home.html',contenido=resultado)
+        return render_template('home.html',contenido=resultado,texto=palabra)
     else:
-        return render_template('home.html',contenido="")
+        return render_template('home.html',contenido="",texto="")
 if __name__ == '__main__':
     app.run(debug=True)
