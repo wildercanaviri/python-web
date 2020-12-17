@@ -13,6 +13,7 @@ def home():
         resultado=aux.obtenerPalabra()
         return render_template('home.html',contenido=resultado,texto=palabra)
     else:
-        return render_template('home.html',contenido="",texto="")
+        return render_template('home.html',contenido
+        ="",texto="")
 if __name__ == '__main__':
     app.run(debug=True)
