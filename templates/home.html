@@ -3,12 +3,14 @@
 
 {% block content%}
 
-    
+  
+
 </div>
         <form action="" method="POST">
-            <div class="row justify-content-md-center" style="margin-top: 80px;">
-                <div class="col col-lg-6">
+            <div class="row justify-content-md-center" style="margin-top: 40px;">
+                <div class="col col-lg-6">              
                     <input type="text" name="palabra" class="form-control" id="exampleFormControlInput1" placeholder="Escriba alguna palabra" value="{{texto}}">
+                
                 </div>
                 
                 <div class="col col-lg-2">
@@ -16,10 +18,18 @@
                 </div>
         </div>
 
+       <br>
         <div class="row justify-content-md-center" style="margin-top: 20px;">
             <div class="col col-lg-1">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="opcion" value="es" id="flexRadioDefault1" checked>
+                 
+                    {% if opcion_marcada=="es" %}
+                        <input class="form-check-input" type="radio" name="opcion" value="es" id="flexRadioDefault1" checked>
+                    {% else %}
+                        <input class="form-check-input" type="radio" name="opcion" value="es" id="flexRadioDefault1">
+                    {% endif%}  
+                  
+                    
                     <label class="form-check-label" for="flexRadioDefault1">
                       Español
                     </label>
@@ -31,8 +41,12 @@
             </div>
             
             <div class="col col-lg-1">
-                <div class="form-check">
+                <div class="form-check">                    
+                    {% if opcion_marcada=="en" %}
+                    <input class="form-check-input" type="radio" name="opcion" value="en" id="flexRadioDefault2" checked>
+                    {% else %}
                     <input class="form-check-input" type="radio" name="opcion" value="en" id="flexRadioDefault2">
+                    {% endif%}      
                     <label class="form-check-label" for="flexRadioDefault2">
                      Ingles
                     </label>
@@ -43,14 +57,50 @@
                 <img src="../static/images/idioma_ingles.png" class="rounded" alt="...">
             </div>
 
+
+            <div class="col col-lg-1">
+                <div class="form-check">                    
+                    {% if opcion_marcada=="fr" %}
+                    <input class="form-check-input" type="radio" name="opcion" value="fr" id="flexRadioDefault2" checked>
+                    {% else %}
+                    <input class="form-check-input" type="radio" name="opcion" value="fr" id="flexRadioDefault2">
+                    {% endif%}  
+                   
+                    <label class="form-check-label" for="flexRadioDefault2">
+                     Frances
+                    </label>
+                  </div>
+            </div>
+
+            <div class="col col-lg-2">
+                <img src="../static/images/idioma_frances.png" class="rounded" alt="...">
+            </div>
+
+
         </div>
     </form>
     
-        <div class="row justify-content-md-center" style="margin-top: 80px;">
+        <div class="row justify-content-md-center" style="margin-top: 40px;">
             <div class="col col-lg-7">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="8">{{contenido}}</textarea>
             </div>
         </div>
+
+      <br><br>
+  
+      {% if imagen=="" %}
+      
+      <div class="text-center" style="margin-bottom: 40px;">
+        <img src="https://icon-library.com/images/default-profile-icon/default-profile-icon-17.jpg" class="rounded" alt="...">
+    </div> 
+      {% else %}
+      
+      <div class="text-center" style="margin-bottom: 40px;">
+        <img src="{{imagen}}" class="rounded" alt="...">
+    </div>
+      {% endif%} 
+
+
       
        
 </div>
